@@ -1,6 +1,13 @@
 # web-analytics
 Web traffic analytics built in flask and mongoengine
 
+## SOME TIPS ON GIT
+
+1. Always pull before start working
+2. After making changes, use SourceTree to add the files and commit them with a meaningful message
+3. Press push to upload the changes to the server
+4. Use gitigore to ignore certain files, files like .pyc (generated from .py file), or any other generated files from the source file and some 
+
 ## TODO
 1. Add a basic flask app
 2. Create a few dummy routing: /about, /contact, /team
