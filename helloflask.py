@@ -9,7 +9,7 @@ def home():
 def about():
     return render_template('about.html')
 
-@app.route('/Status/')
+@app.route('/status/')
 def status():
     return render_template('status.html')
 
