@@ -1,25 +1,36 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Flask app</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
-  </head>
-  <body>
-    
-      <div>
-        <h1>Dummy Demo Site</h1>
-        <strong><nav>
-          <ul>
-            <li><a href="{{ url_for('home') }}">Home</a></li>
-            <li><a href="{{ url_for('about') }}">About</a></li>
-            <li><a href="{{ url_for('status') }}">Status</a></li>
-          </ul>
-        </nav></strong>
-      </div>
-    
-    <div style="margin-left:10%;padding:1px 16px;height:1000px;">
-      {% block content %}
-      {% endblock %}
-    </div>
-  </body>
+   
+ <title>Flask app</title>
+ <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+</head>
+<body>
+
+  <div>
+    <h1>Dummy Demo Site</h1>
+    <strong><nav>
+      <ul>
+        <li><a href="{{ url_for('home') }}">Home</a></li>
+        <li><a href="{{ url_for('about') }}">About</a></li>
+        <li><a href="{{ url_for('status') }}">Status</a></li>
+      </ul>
+    </nav></strong>
+  </div>
+
+  <div style="margin-left:10%;padding:1px 16px;height:1000px;">
+    {% block content %}
+    {% endblock %}
+
+    <img id="tracking-img">
+  </div>
+
+  <script>
+     // var img = document.getElementById("tracking-img");
+     // img.src='/track?theurl='+window.location.href;
+     $.post('/track',{theurl:document.location.href, referral:'google'},function(response){
+      console.log(response);
+     })
+ </script>
+</body>
 </html>

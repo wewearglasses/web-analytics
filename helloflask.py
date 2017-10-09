@@ -1,17 +1,39 @@
-from flask import Flask, render_template
+from flask import Flask
+from flask import request
+from flask import render_template
+import logging
+from MongoTrack import Track
+from mongoengine import connect
+from datetime import datetime
+
+connect('SimpleTracking')
+
 app = Flask(__name__)
 
-@app.route('/')
+@app.route('/',methods=['GET', 'POST'])
 def home():
-    return render_template('home.html')
+	text = request.form.get('theurl')
+	app.logger.info(text)
+	return render_template('home.html')
 
-@app.route('/about/')
+@app.route('/about',methods=['GET', 'POST'])
 def about():
-    return render_template('about.html')
+	text = request.form.get('theurl')
+	app.logger.info(text)
+	return render_template('about.html')
 
-@app.route('/status/')
+@app.route('/track')
+def track():
+	theurl= request.args.get('theurl')
+	t=Track(URL=theurl,Track_date=datetime.now())
+	t.save()
+	return t.my_time
+
+@app.route('/Status',methods=['GET', 'POST'])
 def status():
-    return render_template('status.html')
+	text = request.form.get('theurl')
+	app.logger.info(text)
+	return render_template('status.html')
 
 if __name__ == '__main__':
     app.run(debug=True)
