@@ -2,6 +2,13 @@
 {% block content %}
   <div class="status">
     <h1>Status</h1>
+    {% for track in tracking %}
+    <li class="tracking">
+       
+        <p>{{ track.URL }},{{track.Track_date}}</p>
+    </li>
+	{% endfor %}
+	<h2>Total views: {{trackcount}}</h2>
     <p>TO DO: analytics chart</p>
   </div>
 {% endblock %}

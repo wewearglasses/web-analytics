@@ -26,11 +26,11 @@
   </div>
 
   <script>
-     // var img = document.getElementById("tracking-img");
-     // img.src='/track?theurl='+window.location.href;
-     $.post('/track',{theurl:document.location.href, referral:'google'},function(response){
-      console.log(response);
-     })
+      var img = document.getElementById("tracking-img");
+      img.src='/track?theurl='+window.location.href;
+     //$.post('/track',{theurl:document.location.href},function(response){
+     // console.log(response);
+     //})
  </script>
 </body>
 </html>

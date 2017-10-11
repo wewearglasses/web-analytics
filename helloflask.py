@@ -33,7 +33,9 @@ def track():
 def status():
 	text = request.form.get('theurl')
 	app.logger.info(text)
-	return render_template('status.html')
+	tracking = Track.objects()
+	trackcount = Track.objects.count()
+	return render_template('status.html',tracking=tracking,trackcount=trackcount)
 
 if __name__ == '__main__':
     app.run(debug=True)

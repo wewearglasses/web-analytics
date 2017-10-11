@@ -9,10 +9,10 @@ class Track(Document):
     def my_time(self):
     	return self.Track_date.strftime('%Y-%m-%d')
 
-    PageCount = Track.objects.count()   #aggregation? 
+    #PageCount = Track.objects.count()   #aggregation? 
     #print PageCount
 
-    for rows in Track.objects:
+    #for rows in Track.objects:
     #print rows.URL
     
- # Track1 = Track(text,now.strftime("%Y-%m-%d %H:%M"))
+	#Track1 = Track(text,now.strftime("%Y-%m-%d %H:%M"))
