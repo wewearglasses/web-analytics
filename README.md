@@ -24,3 +24,9 @@ Web traffic analytics built in flask and mongoengine
 4. Create graphs in admin interface to view the data clearer
 5. Add date filter in admin to view data of different date range
 
+## CURRENT BEING DONE
+1. Research on the impact of either using aggregation or running scheduled procedures. (by 3rd november)
+2. Designing a database structure as performing aggregation in queries all the time with existing design may be costly. (by 3rd november)
+3. Determine on when and how the scheduled task will be executed. Few Options to be discussed (by 4th november)
+4. Research on capture visit duration of pages.
+
